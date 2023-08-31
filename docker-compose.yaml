@@ -8,9 +8,9 @@ services:
         - "8083:8083"
         - "7072:7072"
     volumes:
-        - ./fhem/core/:/opt/fhem/
+        - ./fhem/:/opt/fhem/
     networks:
-        default:
+       example-network:
             ipv4_address: 172.16.238.10
     devices:
         - "/dev/ttyAMA0:/dev/ttyAMA0"
@@ -43,7 +43,3 @@ networks:
       driver: default
       config: 
         - subnet: 172.16.238.0/24
-
-volumes:
-  db_data:
-  pgadmin-data:
