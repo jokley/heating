@@ -1,6 +1,27 @@
 version: "3.8"
 
-services:        
+services:
+  fhem: 
+    image: fhem/fhem:latest
+    restart: unless-stopped
+    ports:
+        - "8083:8083"
+        - "7072:7072"
+    volumes:
+        - ./fhem/core/:/opt/fhem/
+    networks:
+        default:
+            ipv4_address: 172.16.238.10
+    devices:
+        - "/dev/ttyAMA0:/dev/ttyAMA0"
+    environment:
+        FHEM_UID: 1000
+        FHEM_GID: 1000
+        TIMEOUT: 10
+        RESTART: 1
+        TELNETPORT: 7072
+        TZ: Europe/Berlin  
+
   nginx:
     image: arm32v6/nginx:alpine
     container_name: nginx
