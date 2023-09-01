@@ -10,6 +10,7 @@ services:
         - "7072:7072"
     volumes:
         - ./fhem/:/opt/fhem/
+        - /sys/class/gpio:/sys/class/gpio
     networks:
        example-network:
             ipv4_address: 172.16.238.10
