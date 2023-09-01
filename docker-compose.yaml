@@ -4,6 +4,7 @@ services:
   fhem: 
     image: fhem/fhem:latest
     restart: unless-stopped
+    privileged: true
     ports:
         - "8083:8083"
         - "7072:7072"
