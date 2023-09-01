@@ -19,7 +19,6 @@ services:
     environment:
         FHEM_UID: 1000
         FHEM_GID: 1000
-        GPIO_GD: 6002
         TIMEOUT: 10
         RESTART: 1
         TELNETPORT: 7072
