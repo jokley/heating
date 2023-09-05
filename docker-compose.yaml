@@ -10,12 +10,13 @@ services:
         - "7072:7072"
     volumes:
         - ./fhem/:/opt/fhem/
-        - /sys/class/gpio:/sys/class/gpio
+        - /sys:/sys
     networks:
        example-network:
             ipv4_address: 172.16.238.10
     devices:
         - "/dev/ttyAMA0:/dev/ttyAMA0"
+        - "/dev/gpiomem:/dev/gpiomem"
     environment:
         FHEM_UID: 1000
         FHEM_GID: 1000
