@@ -36,3 +36,16 @@ Sudo nano /etc/crontab
 ```
 
 ### NGINX
++ Damit die ICONS den Status ohne refresh ändern, muss in der NGINX config das buffering ausgeschaltet werden.
+```ruby
+proxy_buffering off;
+proxy_ignore_client_abort off;
+break;
+```
+
++ .htpasswd File erstellen
+```ruby
+sudo nano nginx/.htpasswd
+```
++ Password erstellen und in .htpasswd einfügen
+[web2generators](https://www.web2generators.com/apache-tools/htpasswd-generator)
